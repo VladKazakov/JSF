@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<persistence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/+xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+             version="2.0" xmlns="http://java.sun.com/xml/ns/persistence">
+
+
+    <!--<persistence-unit-metadata>-->
+        <!--<persistence-unit-defaults>-->
+            <!--<entity-listeners>-->
+                <!--<entity-listener class="ru.DebugListener"/>-->
+            <!--</entity-listeners>-->
+        <!--</persistence-unit-defaults>-->
+    <!--</persistence-unit-metadata>-->
+
+
+    <persistence-unit name="chapter06PU" transaction-type="RESOURCE_LOCAL">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <!--<class>ru.Book</class>-->
+        <!--<class>ru.Customer</class>-->
+
+        <properties>
+            <property name="eclipselink.ddl-generation" value="drop-and-create-tables"/>
+            <property name="eclipselink.ddl-generation.output-mode" value="database"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/test" />
+            <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
+            <property name="javax.persistence.jdbc.user" value="postgres" />
+            <property name="javax.persistence.jdbc.password" value="postgres" />
+            <!--<property name="javax.persistence.sql-load-script-source" value="insert.sql"/>-->
+            <property name="com.acme.persistence.sql-logging" value="on"/>
+
+        </properties>
+
+    </persistence-unit>
+
+
+
+</persistence>
